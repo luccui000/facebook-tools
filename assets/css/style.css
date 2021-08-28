@@ -1,0 +1,187 @@
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-4');
+
+:root {
+    --nav-color: rgb(119, 119, 255);
+    --text-color: #fff;
+    --bg-color: #f3f3f3;
+    --nav-width: 230px;
+    --box-border-radius: 5px;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 62.5%;
+}
+.container {
+    display: flex; 
+    flex-direction: row;
+    font-size: 1.2rem;
+}
+
+.sidebar__pc {
+    min-width: var(--nav-width);
+    height: 100vh;
+    background-color: var(--nav-color); 
+    font-weight: 700;
+}
+.sidebar__pc--navlist {
+    margin: 60px 10px;
+}
+.sidebar__pc--navitem {
+    width: 100%;
+    padding: 15px 10px;
+    cursor: pointer; 
+    transition: background-color 0.2s linear; 
+    border-radius: var(--box-border-radius);
+    box-sizing: border-box; 
+}
+.sidebar__pc--navitem:hover {
+    background-color: var(--bg-color);  
+}
+.sidebar__pc--navitem:hover .sidebar__pc--navlink {
+    color: var(--nav-color);
+}
+.sidebar__pc--navlink {
+    text-decoration: none; 
+    color: var(--text-color);
+    display: block; 
+} 
+#openSideBar:checked ~ .sidebar__mobile--navlist {
+    display: block;  
+    animation: openSide .2s linear;
+}
+#openSideBar:checked ~ .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+@keyframes openSide {
+    from {
+        bottom: 40px;
+    }
+    to {
+        bottom: 60px;
+    }
+}
+.sidebar__mobile--navlist {
+    display: none;
+}
+.sidebar__mobile--navitem {
+    margin: 20px 0px;
+    background-color: var(--nav-color); 
+    padding: 5px 10px;
+    border-radius: var(--box-border-radius);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.sidebar__mobile--navlink {
+    color: var(--text-color);
+    text-decoration: none;
+}
+.sidebar__mobile {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+} 
+.sidebar__mobile--btn {
+    background-color: var(--nav-color);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    width: 50px;
+    height: 50px;
+    color: var(--text-color);
+    cursor: pointer; 
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.sidebar__mobile--btn label span {
+    cursor: pointer; 
+}
+.sidebar__mobile--navlist {
+    /* display: none; */
+    position: absolute;
+    bottom: 60px;
+    right: 5px;
+    text-align: right;
+}
+.content { 
+    width: calc(100% - var(--nav-width)); 
+    flex: 1;  
+    padding: 20px;
+}
+.user__info {
+    width: calc(100% - 60px);
+    height: 300px; 
+    margin: 0 auto;
+    position: relative;
+}
+.user__background {
+    width: 100%;
+    height: 100%;
+    object-fit:cover; 
+    border-radius: var(--box-border-radius);
+}
+.user_avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid var(--nav-color);
+    padding: 5px;
+    position: absolute;
+    top: 80%;
+    left: 50%; 
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+.user__name {
+    font-size: 2rem;
+    margin: 20px auto; 
+    text-align: center;
+    color: var(--nav-color);  
+    position: absolute;
+    top: 120%;
+    left: 50%; 
+    z-index: 2; 
+    transform: translate(-50%, -50%);
+} 
+.user__name span { 
+    border-radius: var(--box-border-radius);
+    padding: 0 5px;
+}
+.main__content {
+    margin: 100px auto;
+}
+.card__control--list {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+.card__control--item {
+    background-color: var(--nav-color);
+    padding: 10px;
+    border-radius: var(--box-border-radius); 
+    cursor: pointer;
+    transition: box-shadow .3s linear; 
+}
+.card__control--item:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+} 
+.card__control--link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+.card__control--icon {
+    width: 100%; 
+    height: 80px;
+    text-align: center;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card__control--footer {
+    text-align: center;
+}

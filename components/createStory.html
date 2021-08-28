@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Story | Luc Cui</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/breakpoint.css">
+    <link rel="stylesheet" href="../assets/css/createstory.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar__pc">
+            <ul class="sidebar__pc--navlist">
+                <li class="sidebar__pc--navitem">
+                    <a href="../index.html" class="sidebar__pc--navlink">Home</a>
+                </li>
+                <li class="sidebar__pc--navitem">
+                    <a href="" class="sidebar__pc--navlink">Contact</a>
+                </li>
+                <li class="sidebar__pc--navitem">
+                    <a href="" class="sidebar__pc--navlink">Settings</a>
+                </li>
+                <li class="sidebar__pc--navitem">
+                    <a href="" class="sidebar__pc--navlink">Facebook Tools</a>
+                </li> 
+            </ul>
+        </nav>
+        <div class="sidebar__mobile">  
+            <button class="sidebar__mobile--btn">
+                <label for="openSideBar">
+                    <span class="material-icons">add</span>
+                </label>
+            </button>  
+            <input type="checkbox" id="openSideBar" hidden >
+            <label class="overlay" for="openSideBar"></label>
+            <ul class="sidebar__mobile--navlist">
+                <li class="sidebar__mobile--navitem">
+                    <a href="" class="sidebar__mobile--navlink">Home</a>
+                </li>
+                <li class="sidebar__mobile--navitem">
+                    <a href="" class="sidebar__mobile--navlink">Contact</a>
+                </li>
+                <li class="sidebar__mobile--navitem">
+                    <a href="" class="sidebar__mobile--navlink">Settings</a>
+                </li>
+                <li class="sidebar__mobile--navitem">
+                    <a href="" class="sidebar__mobile--navlink">Facebook Tools</a>
+                </li> 
+            </ul> 
+        </div>
+        <main class="content">
+            <h2>Create Story</h2>
+            <div class="story">
+                <div class="story__frame" style="--zoom-level: 2.7">
+                    <div class="imageUploaded"></div>
+                    <div class="story__loadingbar"></div>
+                    <div class="story__header">
+                        <div class="story__header--img">
+                            <img src="../assets/images/photo.jpeg" alt="">
+                            <span>Minh Luc</span>
+                        </div>
+                        <div class="story__header--btn">
+                            <span class="material-icons">play_arrow</span>
+                            <span class="material-icons">volume_up</span>
+                            <span class="material-icons">more_horiz</span>
+                        </div>
+                    </div>
+                    <button class="story__upload--btn">
+                        <label for="imageUpload">Tải ảnh lên</label>
+                    </button>
+                    <input type="file" hidden id="imageUpload">
+                    <div class="story__footer">
+                        <div class="story__footer--reply">
+                            <input type="text" placeholder="Reply ...">
+                        </div>
+                        <div class="story__footer--emojis">
+                            <span class="material-icons story__footer--icon" style="color: #40a0fe;">thumb_up_alt</span>
+                            <span class="material-icons story__footer--icon" style="color: #ea5d7d;">favorite</span>
+                            <span class="material-icons story__footer--icon" style="color: #f5ba4f;">sentiment_very_satisfied</span>
+                            <span class="material-icons story__footer--icon" style="color: #de450d;">sentiment_neutral</span>  
+                        </div>
+                    </div>
+                </div>
+                <div class="story__theme">
+                    <h4>Chọn mẫu</h4>
+                    <ul class="story__theme--list">
+                        <li class="story__theme--item" onclick="setTheme(1)">
+                            <img src="../assets/images/photo.jpeg" alt="">
+                            <p>Theme 1</p>
+                        </li>
+                        <li class="story__theme--item" onclick="setTheme(2)">
+                            <img src="../assets/images/photo.jpeg" alt="">
+                            <p>Theme 1</p>
+                        </li>
+                        <li class="story__theme--item" onclick="setTheme(3)">
+                            <img src="../assets/images/photo.jpeg" alt="">
+                            <p>Theme 1</p>
+                        </li>
+                        <li class="story__theme--item" onclick="setTheme(4)">
+                            <img src="../assets/images/photo.jpeg" alt="">
+                            <p>Theme 121212121211</p>
+                        </li>
+                        <li class="story__theme--item" onclick="setTheme(5)">
+                            <img src="../assets/images/photo.jpeg" alt="">
+                            <p>Theme 1</p>
+                        </li>
+                        <li class="story__theme--item" onclick="setTheme(6)">
+                            <img src="../assets/images/photo.jpeg" alt="">
+                            <p>Theme 1</p>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script  src="../function/story/create.js"></script>
+</body>
+</html>
